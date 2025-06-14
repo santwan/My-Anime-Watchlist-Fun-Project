@@ -1,15 +1,34 @@
+import { Link } from "react-router-dom";
+
 const AnimeCard = ({ anime }) => {
-    return (
-      <div className="bg-gray-800 rounded-xl shadow-md overflow-hidden transition hover:scale-105 duration-300">
-        <img src={anime.image} alt={anime.title} className="w-full h-64 object-cover" />
-        <div className="p-4">
+  return (
+    <Link
+      to={`/${anime.slug}`}
+      className="block w-full select-none transform hover:scale-[1.02] transition duration-300"
+    >
+      <div className="bg-cardDark rounded-pill px-6 py-4 flex items-center justify-between gap-4 shadow">
+        {/* Left — title & rating */}
+        <div>
           <h2 className="text-xl font-bold text-white">{anime.title}</h2>
-          <p className="text-sm text-gray-400">{anime.genre.join(", ")}</p>
-          <p className="text-yellow-400 font-semibold mt-1">⭐ {anime.rating}</p>
+          <p className="text-sm text-gray-400">
+            My Rating: <span className="text-yellow-400">⭐ {anime.rating}</span>
+          </p>
+        </div>
+
+        {/* Right — genre tags */}
+        <div className="flex flex-wrap gap-2">
+          {anime.genre.map((g) => (
+            <span
+              key={g}
+              className="text-xs font-semibold bg-accent/20 text-accent px-3 py-1 rounded-full"
+            >
+              {g}
+            </span>
+          ))}
         </div>
       </div>
-    );
-  };
-  
-  export default AnimeCard;
-  
+    </Link>
+  );
+};
+
+export default AnimeCard;
