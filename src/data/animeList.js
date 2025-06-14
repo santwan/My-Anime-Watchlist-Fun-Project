@@ -1,26 +1,26 @@
 const animeList = [
     {
       id: 1,
+      slug: "attack-on-titan",
       title: "Attack on Titan",
       genre: ["Action", "Drama"],
       rating: 9.5,
-      image: "https://upload.wikimedia.org/wikipedia/en/7/70/Shingeki_no_Kyojin_manga_volume_1.jpg"
     },
     {
       id: 2,
+      slug: "your-name",
       title: "Your Name",
       genre: ["Romance", "Drama"],
       rating: 9.0,
-      image: "https://upload.wikimedia.org/wikipedia/en/0/0b/Your_Name_poster.png"
     },
     {
       id: 3,
+      slug: "demon-slayer",
       title: "Demon Slayer",
       genre: ["Action", "Adventure"],
       rating: 9.2,
-      image: "https://upload.wikimedia.org/wikipedia/en/6/6f/Kimetsu_no_Yaiba_Volume_1.png"
-    }
+    },
   ];
   
   export default animeList;
-    
+  
